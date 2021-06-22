@@ -1,0 +1,13 @@
+on:
+  push:
+  workflow_dispatch:
+
+env:
+  FILE: kleur-4.1.4.tgz
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: curl https://registry.yarnpkg.com/kleur/-/${{ env.FILE }} --output ${{ env.FILE }}
