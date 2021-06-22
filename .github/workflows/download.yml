@@ -2,8 +2,6 @@ on:
   push:
   workflow_dispatch:
 
-
-
 env:
   FILE: kleur-4.1.4.tgz
 
@@ -19,3 +17,5 @@ jobs:
 
     steps:
       - run: curl https://registry.yarnpkg.com/kleur/-/${{ matrix.file }} --output ${{ matrix.file }}
+
+      - run: tar zxvf ${{ matrix.file }}
